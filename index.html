@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Meme Generator</title>
 </head>
+
 <body onload="onInit()">
-    
-    
+
+    <header class="nav-bar flex ">
+        <img class="logo" src="LOGO/LOGO.png" alt="logo">
+
+        <ul class="flex">
+            <li>
+                <h2>Gallery</h2>
+            </li>
+            <li>
+                <h2>Memes</h2>
+            </li>
+            <li>
+                <h2>About</h2>
+            </li>
+        </ul>
+
+    </header>
+
     <div style="display: block;">
-        
-        <input type="text" name="text" id="text" oninput="inputVal(this.value)" >
-        <div class="canvas-container " >
-        <canvas id="my-canvas"></canvas>
+        <div class="editor">
+            <input type="text" name="text" id="text" oninput="inputVal(this.value)">
+
+            <button onclick="onFontSize(this)" class="increase">increase</button>
+            <button onclick="onFontSize(this)" class="decrease">decrease</button>
+
+            <button onclick="onTextPosY(this)" class="up">up</button>
+            <button onclick="onTextPosY(this)" class="down">down</button>
+
+            <button onclick="onSwitchLine()" class="switch-line">switch line</button>
+
+
+        </div>
+
+        <div class="canvas-container ">
+            <canvas id="my-canvas"></canvas>
+        </div>
     </div>
-    </div>
-    
-    <section class="images images-container" ></section>
-<img src="" >
+
+    <section class="images images-container flex"></section>
 
     <script src="js/storage-Service.js"></script>
     <script src="js/meme-Service.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
