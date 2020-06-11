@@ -5,30 +5,57 @@
 body {
     margin: 0;
 }
-
-.canvas-container {
-    width: 600px;
-    height: 600px;
+.editor {
+    width: 1000px;
     margin: 0 auto;
-    background-color: lavender;
-    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; */
+    justify-content: space-between;
+    margin-top: 65px;
+}
+ 
+.menu-editor{
+    padding: 32px;
+    border: 1px solid black;
+    margin-left: 10px;
 }
 
-canvas {
-    border: 2px solid black;
+/* .menu-editor {
+
+} */
+
+.line-btns {
+    align-items: center;
+    height: 40px;
+    border: 1px solid black;
+    width: 90%;
+    margin: 16px 0;
+}
+
+.line-btns>* {
+    margin: 0 1px;
+}
+
+#text {
+    width: 90%;
+    height: 28px;
 }
 
 .images-container {
-    background-color: rgb(164, 209, 209);
-    width: 100%;
-    height: 200px;
-    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+    /* background-color: rgb(164, 209, 209); */
+    width: 80%;
+    margin: 30px auto;
+    padding: 15px;
 }
 
 .images-container>* {
-    padding: 10px;
-    width: 150px;
+    width: 100%;
     height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    /* object-position: center; */
 }
 
 header {
@@ -48,7 +75,6 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-
 }
 
 ul li {
@@ -57,10 +83,10 @@ ul li {
     cursor: pointer;
 }
 
-ul li h2{
+ul li h2 {
     font-size: 1.5rem;
     padding: 15px 0;
-    text-align:center;
+    text-align: center;
 }
 
 ul li:hover {
@@ -68,7 +94,8 @@ ul li:hover {
     color: hsl(21, 88%, 54%);
 }
 
-ul li::marker {
+ul li:focus {
+    outline: none;
     border-bottom: 8px solid hsl(21, 99%, 56%);
     color: hsl(21, 88%, 54%);
 }
@@ -79,6 +106,25 @@ ul li::marker {
     display: flex;
 }
 
-/* .space-between{
-    justify-content: space-between;
-} */
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 30px;
+    background-color: azure;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    bottom: 0px;
+   
+}
+
+footer h5 {
+    padding: 0;
+    margin: 0
+}
+
+button img {
+    width: 20px;
+}

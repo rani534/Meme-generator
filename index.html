@@ -27,28 +27,72 @@
 
     </header>
 
-    <div style="display: block;">
-        <div class="editor">
-            <input type="text" name="text" id="text" oninput="inputVal(this.value)">
+    <input type="text" placeholder="Search">
 
-            <button onclick="onFontSize(this)" class="increase">increase</button>
-            <button onclick="onFontSize(this)" class="decrease">decrease</button>
+    <section class="images-container "></section>
 
-            <button onclick="onTextPosY(this)" class="up">up</button>
-            <button onclick="onTextPosY(this)" class="down">down</button>
 
-            <button onclick="onSwitchLine()" class="switch-line">switch line</button>
+    <div class="editor-container" style="display: none;">
 
+ 
+        <div class="editor flex">
+
+            <canvas></canvas>
+
+            <div class="menu-editor">
+
+                <input type="text" name="text" id="text" oninput="inputVal(this.value)" placeholder="text here">
+                <div class="line-btns ">
+                    <button onclick="onTextPosY('up')" class="up"><i class="fas fa-long-arrow-alt-up"></i></button>
+                    <button onclick="onTextPosY('down')" class="down"> <i
+                            class="fas fa-long-arrow-alt-down"></i></button>
+
+                    <button onclick="onSwitchLine()" class="switch-line">
+                        <img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                    </button>
+                </div>
+
+
+                <label>Stroke
+                    <input class="stroke-color" type="color" name="color" onchange="onStrokeColor(this.value)">
+                </label>
+                <label>Fill
+                    <input class="fill-color" type="color" name="color" onchange="onFillColor(this.value)">
+                </label>
+                <button onclick="onFontSize('increase')" class="increase"><img
+                        src="ICONS/increase font - icon.png"></button>
+                <button onclick="onFontSize('decrease')" class="decrease"><img
+                        src="ICONS/decrease font - icon.png"></button>
+
+
+                <label for="font-family">Choose a Font:</label>
+                <select onchange="onFontFamily(this.value)" id="font-family">
+                    <option value="Impact">Impact</option>
+                    <option value="cursive">cursive</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="Arial">Arial</option>
+                </select>
+
+                <button onclick="onTextAlign(this)"><img src="ICONS/align-to-left.png" alt=""></button>
+                <button onclick="onTextAlign(this)"><img src="ICONS/center-text-alignment.png" alt=""></button>
+                <button onclick="onTextAlign(this)"><img src="ICONS/align-to-right.png" alt=""></button>
+
+                <a href="#" onclick="onDownloadCanvas(this)" download="">Download</a>
+
+            </div>
 
         </div>
 
-        <div class="canvas-container ">
-            <canvas id="my-canvas"></canvas>
-        </div>
     </div>
 
-    <section class="images images-container flex"></section>
 
+
+    <footer>
+        <h5>footer footer</h5>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/b277b9cd90.js" crossorigin="anonymous"></script>
     <script src="js/storage-Service.js"></script>
     <script src="js/meme-Service.js"></script>
     <script src="js/main.js"></script>
