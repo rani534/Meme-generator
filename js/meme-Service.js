@@ -1,6 +1,5 @@
 'use strict'
 
-var gCurrLine = 0;
 
 var gKeywords = { 'happy': 12, 'funny puk': 1 };
 
@@ -49,7 +48,7 @@ var gMeme = {
         {
             txt: '',
             size: 20,
-            yLine: 400,
+            yLine: 300,
             xLine: 250,
             fontFamily: 'Impact',
             align: 'center',
@@ -61,17 +60,14 @@ var gMeme = {
 
 function getYLine() {
     return gMeme.lines[gMeme.selectedLineIdx].yLine;
-
 }
-
 function getImgs() {
     return gImgs
 }
-
 function currCanvasImg(imgId) {
     gMeme.selectedImgId = gImgs.find(img => img.id == imgId);
 }
-function getImgUrl(){
+function getImgUrl() {
     return gMeme.selectedImgId.url;
 }
 
@@ -101,11 +97,13 @@ function textPosY(val) {
     (val === 'up') ? gMeme.lines[gMeme.selectedLineIdx].yLine -= 10 : gMeme.lines[gMeme.selectedLineIdx].yLine += 10;
 }
 
-function switchLine() {
-    if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1;
-    else gMeme.selectedLineIdx = 0;
+// function switchLine() {
+//     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1;
+//     else gMeme.selectedLineIdx = 0;
+// }
+function AddLine() {
+    gMeme.selectedLineIdx = 1;
 }
-
 
 function strokeColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].strokeColor = color;
@@ -139,12 +137,15 @@ function textAlign(val) {
         gMeme.lines[gMeme.selectedLineIdx].align = 'right';
         gMeme.lines[gMeme.selectedLineIdx].xLine = 490;
     }
-
 }
 function getTextAlign() {
     return gMeme.lines[gMeme.selectedLineIdx].align
 }
 function getXLine() {
     return gMeme.lines[gMeme.selectedLineIdx].xLine
+}
+
+function getCanvasHeight(){
+
 }
 

@@ -9,12 +9,14 @@
 </head>
 
 <body onload="onInit()">
+   
+
 
     <header class="nav-bar flex ">
         <img class="logo" src="LOGO/LOGO.png" alt="logo">
 
         <ul class="flex">
-            <li>
+            <li onclick="onToGallery()">
                 <h2>Gallery</h2>
             </li>
             <li>
@@ -27,10 +29,9 @@
 
     </header>
 
-    <input type="text" placeholder="Search">
+    <!-- <input type="text" placeholder="Search"> -->
 
     <section class="images-container "></section>
-
 
     <div class="editor-container" style="display: none;">
 
@@ -47,9 +48,11 @@
                     <button onclick="onTextPosY('down')" class="down"> <i
                             class="fas fa-long-arrow-alt-down"></i></button>
 
-                    <button onclick="onSwitchLine()" class="switch-line">
+                    <!-- <button onclick="onSwitchLine()" class="switch-line">
                         <img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
-                    </button>
+                    </button> -->
+                    <button onclick="onAddLine()"><img src="ICONS/add.png"></button>
+
                 </div>
 
 
@@ -74,9 +77,9 @@
                     <option value="Arial">Arial</option>
                 </select>
 
-                <button onclick="onTextAlign(this)"><img src="ICONS/align-to-left.png" alt=""></button>
-                <button onclick="onTextAlign(this)"><img src="ICONS/center-text-alignment.png" alt=""></button>
-                <button onclick="onTextAlign(this)"><img src="ICONS/align-to-right.png" alt=""></button>
+                <button onclick="onTextAlign(this.value)" value="L"><img src="ICONS/align-to-left.png" alt=""></button>
+                <button onclick="onTextAlign(this.value)" value="C"><img src="ICONS/center-text-alignment.png" alt=""></button>
+                <button onclick="onTextAlign(this.value)" value="R"><img src="ICONS/align-to-right.png" alt=""></button>
 
                 <a href="#" onclick="onDownloadCanvas(this)" download="">Download</a>
 
